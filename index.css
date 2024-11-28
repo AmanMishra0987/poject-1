@@ -1,0 +1,119 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to left,#ea04ea 0%,#dad013 100%);
+}
+.wrapper .outer {
+    position: relative; /* Ensure child elements move relative to this */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    width: 400px;
+    overflow: hidden; /* Prevent cards from going out of bounds */
+}
+.wrapper .card{
+    border-top: 3px solid #ffbf008c ;
+    border-left: 3px solid #ffbf008c ;
+    height: 250px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    
+    flex-direction: column;
+    border-radius: 10px;
+    
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    box-shadow: 1px 1px 50px 15px rgba(0,0,0,0.1);
+    animation: animate 15s linear infinite;
+    animation-delay:calc(3s * var(--delay)) ;
+}
+.outer:hover .card{
+    animation-play-state: paused;
+}
+.wrapper .card:last-child{
+    animation-delay: calc(-3s * var(--delay));
+}
+@keyframes animate{
+    0%{
+        opacity: 0;
+        transform: translateY(100%) scale(0.5);
+    }
+    5%,20%{
+        opacity: 0.4;
+        transform: translateY(70%) scale(0.7);
+    }
+    25%,40%{
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0%) scale(1);
+    }
+    45%,60%{
+        opacity: 0.4;
+        transform: translateY(-70%) scale(0.7);
+    }
+    65%,100%{
+        opacity: 0;
+        transform: translateY(-100%) scale(0.5);
+    }
+}
+.card .content{
+    margin-top: 10px;
+    border-radius: 10px;
+    height: 200px;
+    width: 93%;
+    background-color:#ffbf008c;
+    margin-bottom: 100px;
+    opacity: 0.4;
+    border-top: 6px solid #ffbf008c ;
+    border-left: 6px solid #ffbf008c ;
+}
+
+.img{
+    height: 50px;
+    width: 50px;
+    background-color:#ffbf008c;
+    border-radius: 50%;
+    position: relative;
+    bottom: 80px;
+    right: 115px;
+    opacity: 0.4;
+    border: 3px solid #ffbf008c ;
+}
+.may{
+    height: 25px;
+    width: 72%;
+    background-color:#ffbf008c;
+    position: absolute;
+    bottom: 103px;
+    left: 72px;
+    border-radius:10px ;
+    opacity: 0.4;
+    border: 3px solid #ffbf008c ;
+}
+.may1{
+    height: 10px;
+    width: 120px;
+    border-radius:10px ;
+    background-color:#ffbf008c;
+    position: absolute;
+    top: 155px;
+    right: 105px;
+    opacity: 0.4;
+    border: 3px solid #ffbf008c ;
+}
+
+
+
